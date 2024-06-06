@@ -8,7 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          # token: ${{ secrets.PEP8SECRET }}
           ref: ${{ github.head_ref }}
       - name: autopep8
         id: autopep8
@@ -18,7 +17,7 @@ jobs:
       - name: Commit autopep8 changes
         if: steps.autopep8.outputs.exit-code == 2
         run: |
-          git config --global user.name 'Peter Evans'
-          git config --global user.email 'peter-evans@users.noreply.github.com'
+          git config --global user.name 'Python Superman'
+          git config --global user.email 'Python-Superman@users.noreply.github.com'
           git commit -am "Automated autopep8 fixes"
           git push
