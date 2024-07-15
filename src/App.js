@@ -1,26 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
-import M from 'materialize-css';
+import { useEffect, useRef, useState } from "react";
+import M from "materialize-css";
 
-import generateCustomer from './generateCustomer';
+import generateCustomer from "./generateCustomer";
 
-import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min.js';
-import './App.css';
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
+import "./App.css";
 
-import NavBar from './NavBar';
-import Calls from './Calls';
-import Events from './Events';
-import Simulate from './Simulate';
-import Customer from './Customer';
+import NavBar from "./NavBar";
+import Calls from "./Calls";
+import Events from "./Events";
+import Simulate from "./Simulate";
+import Customer from "./Customer";
 
 function App() {
   const [calls, setCalls] = useState([]);
   const [callEvents, setCallEvents] = useState([]);
   const [webexApp, setWebexApp] = useState(false);
   const [webexAppUser, setWebexAppUser] = useState({
-    displayName: '',
-    email: '',
-    orgId: '',
+    displayName: "",
+    email: "",
+    orgId: "",
   });
   const [showModal, setShowModal] = useState(false);
   const [showSimulateModal, setShowSimulateModal] = useState(false);
@@ -96,17 +96,17 @@ function App() {
       const app = new window.webex.Application(config);
       try {
         await app.onReady();
-        console.log('Webex SDK Ready');
+        console.log("Webex SDK Ready");
         await app.listen();
-        console.log('Adding call listener');
-        app.on('sidebar:callStateChanged', (callData) => {
+        console.log("Adding call listener");
+        app.on("sidebar:callStateChanged", (callData) => {
           handleNewCallEvent(callData);
         });
 
         setWebexApp(app);
         setWebexAppUser(app.application.states.user);
       } catch (error) {
-        console.error('Error initializing Webex:', error);
+        console.error("Error initializing Webex:", error);
       }
     }
 
@@ -121,13 +121,13 @@ function App() {
       return;
     }
     // Set badge based on # of active calls
-    const activeCalls = calls.filter((call) => call.state !== 'Ended');
+    const activeCalls = calls.filter((call) => call.state !== "Ended");
     const activeCallsCount = activeCalls.length;
     webexApp?.context?.getSidebar().then((sidebar) => {
       console.log(`Setting badge count to: ${activeCallsCount}`);
       // Badges
       sidebar.showBadge({
-        badgeType: 'count',
+        badgeType: "count",
         count: activeCallsCount,
       });
     });
@@ -136,20 +136,20 @@ function App() {
   function handleSimulate(number, callState) {
     // Create simulated call event
     const call = {
-      callType: 'Placed',
+      callType: "Placed",
       id: Date.now(),
       localParticipant: {
-        callerID: '',
+        callerID: "",
         isMuted: true,
-        name: 'You',
+        name: "You",
       },
       remoteParticipants: [
         {
           callerID: number,
-          name: 'Simulated Caller',
+          name: "Simulated Caller",
         },
       ],
-      state: callState || 'Started',
+      state: callState || "Started",
     };
     handleNewCallEvent(call);
     handleHideSimulateModal();

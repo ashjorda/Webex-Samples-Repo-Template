@@ -1,4 +1,4 @@
-import CallStateFlow from './CallStateFlow';
+import CallStateFlow from "./CallStateFlow";
 
 function Call({ call, onShow }) {
   return (
@@ -28,10 +28,10 @@ function Call({ call, onShow }) {
             <b>Call Type:</b> {call.callType}
           </p>
           <p>
-            <b>Remote Participants:</b>{' '}
+            <b>Remote Participants:</b>{" "}
             {call.remoteParticipants
               .map((rp) => `${rp.callerID} (${rp.name})`)
-              .join(', ')}
+              .join(", ")}
           </p>
         </div>
       </div>

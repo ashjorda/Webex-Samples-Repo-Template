@@ -22,7 +22,7 @@ jobs:
         if: ${{ steps.check-lock.outputs.package-lock-exists == 'true' }}
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install dependencies
         if: ${{ steps.check-lock.outputs.package-lock-exists == 'true' }}
