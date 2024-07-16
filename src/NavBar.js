@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import M from 'materialize-css';
+import { useEffect } from "react";
+import PropTypes from "prop-types";
+import M from "materialize-css";
 
 function NavBar({ userProfile, onSimulate }) {
   useEffect(() => {
     // Initialize the Dropdown
-    const dropdowns = document.querySelectorAll('.dropdown-trigger');
+    const dropdowns = document.querySelectorAll(".dropdown-trigger");
     M.Dropdown.init(dropdowns, { constrainWidth: false });
   }, []);
 
@@ -27,13 +27,13 @@ function NavBar({ userProfile, onSimulate }) {
         </ul>
         <ul
           className="right valign-wrapper"
-          style={{ display: 'flex', height: '100%' }}
+          style={{ display: "flex", height: "100%" }}
         >
           <li>
             <button
               className="dropdown-trigger btn-flat valign-wrapper"
               data-target="profile-dropdown"
-              style={{ display: 'flex', alignItems: 'center' }}
+              style={{ display: "flex", alignItems: "center" }}
             >
               <i className="material-icons left">account_circle</i> Profile
               <i className="material-icons right">arrow_drop_down</i>

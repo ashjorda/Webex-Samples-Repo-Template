@@ -16,19 +16,19 @@ export default function Customer({ customer }) {
               {customer.firstName} {customer.lastName}
             </span>
             <p className="valign-wrapper">
-              <i className="material-icons" style={{ marginRight: '8px' }}>
+              <i className="material-icons" style={{ marginRight: "8px" }}>
                 email
-              </i>{' '}
+              </i>{" "}
               {customer.email}
             </p>
             <p className="valign-wrapper">
-              <i className="material-icons" style={{ marginRight: '8px' }}>
+              <i className="material-icons" style={{ marginRight: "8px" }}>
                 phone
-              </i>{' '}
+              </i>{" "}
               {customer.phone}
             </p>
             <p className="valign-wrapper">
-              <i className="material-icons" style={{ marginRight: '8px' }}>
+              <i className="material-icons" style={{ marginRight: "8px" }}>
                 location_on
               </i>
               {customer.address.line1}
@@ -39,21 +39,21 @@ export default function Customer({ customer }) {
                   <br />
                 </>
               )}
-              {customer.address.city}, {customer.address.state}{' '}
+              {customer.address.city}, {customer.address.state}{" "}
               {customer.address.zip}
             </p>
           </div>
         </div>
         <div className="card-action">
           <span className="valign-wrapper">
-            <i className="material-icons" style={{ marginRight: '8px' }}>
+            <i className="material-icons" style={{ marginRight: "8px" }}>
               edit
             </i>
             {customer.notes}
           </span>
           <br />
           <span className="valign-wrapper">
-            <i className="material-icons" style={{ marginRight: '8px' }}>
+            <i className="material-icons" style={{ marginRight: "8px" }}>
               access_time
             </i>
             Created: {new Date(customer.createdAt).toLocaleDateString()}
