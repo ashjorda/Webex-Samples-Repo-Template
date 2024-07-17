@@ -1,16 +1,16 @@
-import M from "materialize-css";
-import { useState, useEffect } from "react";
+import M from 'materialize-css';
+import { useState, useEffect } from 'react';
 
 export default function Simulate({ onClick }) {
   useEffect(() => {
     // Initialize Materialize select dropdown
     const options = {};
-    const select = document.querySelector("#callState");
+    const select = document.querySelector('#callState');
     M.FormSelect.init(select, options);
   }, []);
 
-  const [callState, setCallState] = useState("");
-  const [number, setnumber] = useState("");
+  const [callState, setCallState] = useState('');
+  const [number, setnumber] = useState('');
 
   function handleCallStateChange(e) {
     const selectedState = e.target.value;
