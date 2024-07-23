@@ -6,13 +6,9 @@ This template repo also contains a sample README, that outlines sections you sho
 
 ## Usage
 
-1. **Clone the repository**: First, clone this repository to your local machine using `git clone git@github.com:WebexSamples/CallMonitorApp.git`.
+1. **Clone the repository**: First, clone this repository to your local machine using `git clone git@github.com:WebexSamples/Webex-Samples-Template.git`.
 
-2. **Install dependencies**: Navigate to the project directory and run `npm install` to install the necessary dependencies.
-
-3. **Start Server**: Run the server for the application with `npm start`.
-
-4. **Add Webex Embedded App**: Follow the instructions [here](https://developer.webex.com/docs/embedded-apps-guide) to create a new Webex Embedded App with the Start URL configured as your server's address.
+2. **Install dependencies**: Install prettier/autopep8 as per the below instructions under "Github Actions" section
 
 ## Github Actions
 
@@ -60,13 +56,5 @@ autopep8 -r --diff --aggressive --aggressive .
 ```bash
 autopep8 -r -i --aggressive --aggressive .
 ```
-
-
-## Don't be a Stranger
-
-- https://developer.webex.com/docs
-- https://developer.webex.com/blog
-- https://developer.webex.com/support
-- @WebexDevs: https://twitter.com/webexdevs
 
 Made with <3 by the Webex Developer Evangelism Team at Cisco
