@@ -15,7 +15,7 @@ jobs:
         id: git-check
         run: |
           if [[ -n $(git status --porcelain) ]]; then
-            echo "autopep8 has made changes to the code."
+            echo "autopep8 has found linting issues with your code."
             exit 1
           else
             echo "No changes were made by autopep8."
