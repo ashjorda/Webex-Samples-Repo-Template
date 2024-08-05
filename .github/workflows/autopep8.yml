@@ -22,8 +22,9 @@ jobs:
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             echo "The following linting errors were found:"
-            # Show the diff output
-            autopep8 --exit-code --recursive --diff --aggressive --aggressive .
+            # Capture and display the diff output
+            DIFF_OUTPUT=$(autopep8 --exit-code --recursive --diff --aggressive --aggressive .)
+            echo "$DIFF_OUTPUT"
             exit 1
           else
             echo "No changes were made by autopep8."
