@@ -15,7 +15,9 @@ jobs:
         id: git-check
         run: |
           if [[ -n $(git status --porcelain) ]]; then
-            echo "autopep8 has found linting issues with your code."
+            echo "The following linting errors were found:"
+            # Show the diff output
+            autopep8 --exit-code --recursive --diff --aggressive --aggressive .
             exit 1
           else
             echo "No changes were made by autopep8."
