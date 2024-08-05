@@ -18,7 +18,7 @@ jobs:
           autopep8 --exit-code --recursive --diff --aggressive --aggressive . > autopep8_diff_output.txt || true
           # Check if the file has content (i.e., there are changes)
           if [[ -s autopep8_diff_output.txt ]]; then
-            echo "autopep8 found errors. See diff changes that need to be made to pass this action"
+            echo "autopep8 found errors. See diff changes below that need to be made to pass this action"
             # Display the contents of the diff output file
             cat autopep8_diff_output.txt
             exit 1
