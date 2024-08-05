@@ -15,11 +15,10 @@ jobs:
         run: pip install autopep8
       - name: Run autopep8 and check for changes
         run: |
-          # Run autopep8 and capture the diff output into a file
           autopep8 --exit-code --recursive --diff --aggressive --aggressive . > autopep8_diff_output.txt || true
           # Check if the file has content (i.e., there are changes)
           if [[ -s autopep8_diff_output.txt ]]; then
-            echo "autopep8 has made changes to the code."
+            echo "autopep8 found errors. See diff changes that need to be made to pass this action"
             # Display the contents of the diff output file
             cat autopep8_diff_output.txt
             exit 1
