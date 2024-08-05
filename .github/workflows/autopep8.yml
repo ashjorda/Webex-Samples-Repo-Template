@@ -16,10 +16,10 @@ jobs:
       - name: Run autopep8 and check for changes
         run: |
           # Run autopep8 and capture the diff output into a file
-          autopep8 --exit-code --recursive --diff --aggressive --aggressive . > autopep8_diff_output.txt
+          autopep8 --exit-code --recursive --diff --aggressive --aggressive . > autopep8_diff_output.txt || true
           # Check if the file has content (i.e., there are changes)
           if [[ -s autopep8_diff_output.txt ]]; then
-            echo "Linting failed, see diff changes below:"
+            echo "autopep8 has made changes to the code."
             # Display the contents of the diff output file
             cat autopep8_diff_output.txt
             exit 1
