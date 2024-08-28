@@ -1,4 +1,4 @@
-name: Ruff Python Linter
+name: Ruff
 on: pull_request
 jobs:
   build:
