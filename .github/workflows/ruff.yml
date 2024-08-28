@@ -1,4 +1,4 @@
-name: CI
+name: Ruff
 on: pull_request
 jobs:
   build:
